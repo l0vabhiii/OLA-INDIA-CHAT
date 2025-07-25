@@ -2,40 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ola India Chat</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <style>
-    body {
-      background: linear-gradient(to right, #ffa500, #ffffff, #008000);
-      min-height: 100vh;
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="text-gray-800 flex flex-col items-center justify-center p-6">
+<body class="bg-gray-100 font-sans">
 
-  <header class="text-center mb-8 fade-in">
-    <h1 class="text-4xl font-extrabold text-orange-600 mb-2">🇮🇳 Ola India Chat</h1>
-    <p class="text-lg text-gray-700">Welcome! Connect & Chat With People Across India.</p>
+  <!-- Navbar -->
+  <header class="bg-green-600 text-white p-4 flex justify-between items-center shadow">
+    <h1 class="text-xl font-bold">Ola India Chat</h1>
+    <div class="space-x-4 text-xl">
+      <i class="fas fa-camera"></i>
+      <i class="fas fa-search"></i>
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
   </header>
 
-  <section class="grid gap-4 w-full max-w-sm fade-in">
-    <a href="signup.html" class="bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Sign Up</a>
-    <a href="login.html" class="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Login</a>
-    <a href="dashboard.html" class="bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Dashboard</a>
-    <a href="support.html" class="bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Support</a>
-  </section>
+  <!-- Main Chat Layout -->
+  <div class="flex h-[90vh]">
 
-  <footer class="mt-10 text-sm text-gray-600 fade-in">
-    Made in 🇮🇳 India • Powered by <strong>Ola India Chat</strong>
-  </footer>
+    <!-- Sidebar / Contacts -->
+    <aside class="w-full md:w-1/3 border-r bg-white overflow-y-auto">
+      <div class="p-3 border-b font-semibold bg-gray-50">Chats</div>
+
+      <div class="hover:bg-gray-100 cursor-pointer p-4 border-b flex items-center">
+        <img src="https://i.pravatar.cc/50" class="w-10 h-10 rounded-full mr-3">
+        <div>
+          <h3 class="font-bold">Aman Bhai</h3>
+          <p class="text-sm text-gray-500">Bhai ready ho gya</p>
+        </div>
+      </div>
+
+      <div class="hover:bg-gray-100 cursor-pointer p-4 border-b flex items-center">
+        <img src="https://i.pravatar.cc/51" class="w-10 h-10 rounded-full mr-3">
+        <div>
+          <h3 class="font-bold">Mishti</h3>
+          <p class="text-sm text-gray-500">Send kr rhi hu</p>
+        </div>
+      </div>
+
+      <!-- Add more users -->
+    </aside>
+
+    <!-- Chat Area -->
+    <main class="hidden md:flex flex-col flex-1 bg-cover bg-center" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
+
+      <!-- Chat Header -->
+      <div class="p-4 bg-white flex items-center justify-between border-b">
+        <div class="flex items-center">
+          <img src="https://i.pravatar.cc/52" class="w-10 h-10 rounded-full mr-3">
+          <div>
+            <h3 class="font-bold">Mishti</h3>
+            <p class="text-sm text-gray-500">Online</p>
+          </div>
+        </div>
+        <div class="text-xl text-gray-600 space-x-4">
+          <i class="fas fa-video"></i>
+          <i class="fas fa-phone"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="flex-1 p-6 space-y-4 overflow-y-auto">
+        <div class="bg-green-100 w-max px-4 py-2 rounded-xl ml-auto">Hi</div>
+        <div class="bg-white w-max px-4 py-2 rounded-xl">Hello Bhai</div>
+        <div class="bg-green-100 w-max px-4 py-2 rounded-xl ml-auto">Frontend done?</div>
+        <div class="bg-white w-max px-4 py-2 rounded-xl">Almost 😎</div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="p-4 bg-white flex items-center border-t">
+        <input type="text" placeholder="Type a message" class="flex-1 p-2 border rounded-full bg-gray-100" />
+        <button class="ml-3 text-green-600 text-xl"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </main>
+  </div>
 
 </body>
 </html>
