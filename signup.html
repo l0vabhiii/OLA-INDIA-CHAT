@@ -4,56 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up - Ola India Chat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #ff6f00, #ffffff, #00a859);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
+      background: linear-gradient(135deg, #00c853, #ffffff, #ff6f00);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .signup-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      max-width: 360px;
+      width: 90%;
+      text-align: center;
+      animation: slideUp 1s ease-in-out;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    input:focus {
+      border-color: #ff6f00;
+      outline: none;
+    }
+    button {
+      background: linear-gradient(to right, #00c853, #ff6f00);
+      color: #fff;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .link {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .link a {
+      color: #00c853;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    @keyframes fadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0 }
+      to { transform: translateY(0); opacity: 1 }
     }
 
-    .glass {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .animate-pop {
-      animation: popIn 0.8s ease-out forwards;
-    }
-
-    @keyframes popIn {
-      0% {transform: scale(0.8); opacity: 0;}
-      100% {transform: scale(1); opacity: 1;}
+    @media(max-width: 500px) {
+      .signup-container {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center px-4">
+<body>
 
-  <div class="w-full max-w-md glass rounded-2xl p-8 shadow-xl animate-pop">
-    <h2 class="text-3xl font-bold text-white mb-6 text-center">Create Account</h2>
-    
-    <form id="signupForm" class="space-y-4">
-      <input type="text" placeholder="Full Name" class="w-full px-4 py-2 rounded-lg bg-white text-black placeholder-gray-600 focus:outline-none" required>
-      <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg bg-white text-black placeholder-gray-600 focus:outline-none" required>
-      <input type="password" placeholder="Password" class="w-full px-4 py-2 rounded-lg bg-white text-black placeholder-gray-600 focus:outline-none" required>
-      <input type="password" placeholder="Confirm Password" class="w-full px-4 py-2 rounded-lg bg-white text-black placeholder-gray-600 focus:outline-none" required>
-
-      <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition">Sign Up</button>
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form action="dashboard.html" method="POST">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <button type="submit">Sign Up</button>
     </form>
-
-    <p class="mt-4 text-white text-center">
-      Already have an account?
-      <a href="login.html" class="underline text-green-100 hover:text-white">Login here</a>
-    </p>
+    <div class="link">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
   </div>
 
 </body>
