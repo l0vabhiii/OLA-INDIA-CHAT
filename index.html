@@ -4,46 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ola India Chat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <style>
     body {
-      font-family: 'Nunito', sans-serif;
-      background: linear-gradient(135deg, #ff9800, #ffffff, #4caf50);
-      animation: gradientBG 8s ease infinite;
-      background-size: 400% 400%;
+      background: linear-gradient(to right, #ffa500, #ffffff, #008000);
+      min-height: 100vh;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     .fade-in {
-      animation: fadeInUp 1s ease-out both;
+      animation: fadeIn 1.2s ease-in-out;
     }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-center px-4">
+<body class="text-gray-800 flex flex-col items-center justify-center p-6">
 
-  <div class="bg-white bg-opacity-80 p-6 rounded-2xl shadow-xl max-w-md w-full fade-in">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo" class="h-16 mx-auto mb-4">
-    <h1 class="text-3xl font-bold text-orange-600 mb-2">Ola India Chat</h1>
-    <p class="text-gray-700 mb-6">Welcome to the next-gen Indian messaging experience. Fast, secure, and built for Bharat 🇮🇳</p>
-    <a href="login.html" class="inline-block w-full bg-orange-500 text-white py-3 rounded-full font-semibold text-lg shadow hover:bg-orange-600 transition-all duration-300">Get Started</a>
-  </div>
+  <header class="text-center mb-8 fade-in">
+    <h1 class="text-4xl font-extrabold text-orange-600 mb-2">🇮🇳 Ola India Chat</h1>
+    <p class="text-lg text-gray-700">Welcome! Connect & Chat With People Across India.</p>
+  </header>
+
+  <section class="grid gap-4 w-full max-w-sm fade-in">
+    <a href="signup.html" class="bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Sign Up</a>
+    <a href="login.html" class="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Login</a>
+    <a href="dashboard.html" class="bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Dashboard</a>
+    <a href="support.html" class="bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg text-center shadow-md font-semibold transition">Support</a>
+  </section>
+
+  <footer class="mt-10 text-sm text-gray-600 fade-in">
+    Made in 🇮🇳 India • Powered by <strong>Ola India Chat</strong>
+  </footer>
 
 </body>
 </html>
