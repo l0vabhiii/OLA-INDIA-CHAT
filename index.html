@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ola India Chat</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #FF671F, #FFFFFF, #046A38);
+    }
+    .chat-bubble {
+      animation: popIn 0.3s ease-in-out;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-green-700">🇮🇳 Ola India Chat</h1>
+    <div class="flex gap-3 items-center">
+      <button class="bg-green-600 text-white px-4 py-2 rounded-xl shadow hover:bg-green-700 transition">Login</button>
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-xl shadow hover:bg-orange-600 transition">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Chat Interface -->
+  <main class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    
+    <!-- Contacts List -->
+    <aside class="bg-white rounded-2xl p-4 shadow-lg md:col-span-1">
+      <h2 class="text-xl font-semibold mb-4 text-green-800">Chats</h2>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition">
+          <img src="https://i.pravatar.cc/40?u=1" class="w-10 h-10 rounded-full" />
+          <div>
+            <p class="font-semibold">Priya</p>
+            <p class="text-sm text-gray-500">Typing...</p>
+          </div>
+        </li>
+        <li class="flex items-center space-x-3 hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition">
+          <img src="https://i.pravatar.cc/40?u=2" class="w-10 h-10 rounded-full" />
+          <div>
+            <p class="font-semibold">Amit</p>
+            <p class="text-sm text-gray-500">Okay bro</p>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Chat Window -->
+    <section class="bg-white rounded-2xl p-4 shadow-lg md:col-span-2 flex flex-col justify-between">
+      <div class="border-b pb-3 mb-3 flex items-center gap-3">
+        <img src="https://i.pravatar.cc/40?u=1" class="w-10 h-10 rounded-full" />
+        <div>
+          <h3 class="font-bold">Priya</h3>
+          <span class="text-xs text-green-600">Online</span>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="flex flex-col gap-3 overflow-y-auto h-96 px-1">
+        <div class="chat-bubble bg-green-100 p-3 rounded-xl self-start shadow-sm">
+          Hey! Kya haal hai?
+        </div>
+        <div class="chat-bubble bg-blue-100 p-3 rounded-xl self-end shadow-sm">
+          Sab badhiya! Tu suna 😄
+        </div>
+        <div class="chat-bubble bg-green-100 p-3 rounded-xl self-start shadow-sm">
+          Ola India Chat ka test ho raha hai 😎
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <form class="mt-4 flex gap-2">
+        <input type="text" placeholder="Type your message..." class="flex-grow p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400" />
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition">
+          Send
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-4 text-sm text-gray-600">
+    Made with ❤️ by Midow Creater | 🇮🇳 Ola India Chat &copy; 2025
+  </footer>
+</body>
+</html>
