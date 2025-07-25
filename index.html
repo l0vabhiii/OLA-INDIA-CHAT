@@ -2,63 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ola India Chat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      font-family: 'Rubik', sans-serif;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #ff9933, #138808);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    .slide-in {
+      animation: slideIn 1s ease forwards;
+    }
+    @keyframes slideIn {
+      0% {transform: translateX(-100%);}
+      100% {transform: translateX(0);}
     }
     .phone-frame {
       width: 320px;
-      height: 640px;
-      border: 10px solid #111;
-      border-radius: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      background: white;
+      height: 600px;
+      border: 16px solid #222;
+      border-radius: 40px;
       position: relative;
       overflow: hidden;
+      background-color: #fefefe;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-    .glow-btn {
-      background: linear-gradient(90deg, #ff8c00, #ffffff, #00a859);
-      background-size: 200% auto;
-      color: black;
-      border-radius: 9999px;
-      font-weight: 600;
-      transition: 0.5s;
-      animation: glow 3s linear infinite;
-    }
-    @keyframes glow {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
+    .phone-notch {
+      width: 100px;
+      height: 30px;
+      background-color: #222;
+      border-radius: 15px;
+      position: absolute;
+      top: -16px;
+      left: calc(50% - 50px);
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-orange-50 via-white to-green-50 min-h-screen flex items-center justify-center px-4">
+<body class="min-h-screen flex items-center justify-center px-4">
 
-  <div class="phone-frame flex flex-col items-center justify-between py-8 px-4">
-    <!-- Logo & Name -->
-    <div class="flex flex-col items-center gap-2">
-      <img src="https://img.icons8.com/ios-filled/100/26e07f/whatsapp.png" alt="Chat Logo" class="w-16 animate-bounce">
-      <h1 class="text-2xl font-bold text-gray-800">Ola India Chat</h1>
-      <p class="text-sm text-gray-600 text-center px-4">A modern, fast & secure way to chat with your Indian friends and groups – 🇮🇳</p>
-    </div>
+  <div class="phone-frame">
+    <div class="phone-notch"></div>
+    <div class="flex flex-col h-full text-white bg-gradient-to-br from-orange-500 to-green-600 p-6 slide-in">
+      <h1 class="text-3xl font-bold mb-2">Ola India Chat 🇮🇳</h1>
+      <p class="text-sm mb-6">Secure. Fast. Tricolor Pride.</p>
+      
+      <div class="flex-1 bg-white rounded-xl shadow-inner p-4 overflow-auto">
+        <div class="flex items-center mb-4 animate-bounce">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-8 h-8 mr-3" />
+          <span class="text-gray-800 font-medium">Encrypted Chat 💬</span>
+        </div>
+        <div class="flex items-center mb-4 animate-pulse">
+          <img src="https://cdn-icons-png.flaticon.com/512/724/724715.png" class="w-8 h-8 mr-3" />
+          <span class="text-gray-800 font-medium">Voice Notes 🎤</span>
+        </div>
+        <div class="flex items-center mb-4 animate-bounce">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="w-8 h-8 mr-3" />
+          <span class="text-gray-800 font-medium">Status Sharing 📸</span>
+        </div>
+        <div class="flex items-center mb-4 animate-pulse">
+          <img src="https://cdn-icons-png.flaticon.com/512/109/109602.png" class="w-8 h-8 mr-3" />
+          <span class="text-gray-800 font-medium">Dark Mode 🌙</span>
+        </div>
+      </div>
 
-    <!-- Illustration -->
-    <div class="w-full flex justify-center">
-      <img src="https://ouch-cdn2.icons8.com/NCh6lTfBrGo-LlmVeA4uAaEfaNgNqZGn4oSl2xnhN6U/rs:fit:640:896/czM6Ly9pY29uczgu/b3VjaC1wcm9kL2lt/YWdlcy9jb3B5LXRl/YW0tY2hhdHRpbmct/YXBwLnBuZw.png" alt="Chat Illustration" class="w-60 h-auto">
-    </div>
-
-    <!-- Button -->
-    <div class="w-full text-center">
-      <a href="login.html" class="glow-btn px-6 py-2 text-white text-lg shadow-lg">Get Started</a>
-    </div>
-
-    <!-- Footer -->
-    <div class="text-xs text-gray-400 text-center pt-4">
-      Made with ❤️ in India<br>
-      🇮🇳 Ola India Chat – All Rights Reserved
+      <button class="mt-6 bg-white text-green-700 font-bold py-2 rounded-full shadow hover:bg-gray-100 transition duration-300">
+        Get Started
+      </button>
     </div>
   </div>
 
