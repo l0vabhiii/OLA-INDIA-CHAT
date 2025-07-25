@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ola India Chat - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffa500, #ffffff, #008000);
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-orange-600">🇮🇳 Ola India Chat</h1>
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded">Logout</button>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="p-6 fade-in">
+    <h2 class="text-2xl font-semibold mb-4">👋 Welcome to Your Dashboard</h2>
+    
+    <div class="bg-white rounded-xl shadow-lg p-4 mb-6">
+      <p class="text-lg">📌 This is your main chat hub. You can:</p>
+      <ul class="list-disc pl-6 mt-2 text-gray-700">
+        <li>View all your chats</li>
+        <li>Start new conversations</li>
+        <li>Join public groups</li>
+        <li>Customize your profile</li>
+      </ul>
+    </div>
+
+    <!-- Dummy Chat Preview -->
+    <section class="grid gap-4 md:grid-cols-2">
+      <div class="bg-green-50 p-4 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="font-bold text-lg">👤 Anjali Singh</h3>
+        <p class="text-sm text-gray-600">Last message: "Hey, did you see the update?"</p>
+      </div>
+      <div class="bg-green-50 p-4 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="font-bold text-lg">👤 Rakesh Kumar</h3>
+        <p class="text-sm text-gray-600">Last message: "Let's schedule a call."</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function logout() {
+      alert("You have been logged out.");
+      window.location.href = "login.html"; // Adjust if using different file name
+    }
+  </script>
+</body>
+</html>
